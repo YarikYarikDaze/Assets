@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Linq;
 
 
 public class DeckScript : MonoBehaviour
@@ -24,7 +25,7 @@ public class DeckScript : MonoBehaviour
 
     public ColorScript GiveCard()
     {
-        int randomValue = (new Random()).Next(0, CurrentNumberOfCards.Sum());
+        int randomValue = (new System.Random()).Next(0, CurrentNumberOfCards.Sum());
         for (int i = 0; i < CurrentNumberOfCards.Length; i++)
         {
             randomValue -= CurrentNumberOfCards[i];
