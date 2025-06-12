@@ -7,7 +7,7 @@ public class EventManagerScript : MonoBehaviour
     public StarterDeck starterDeck;
 
     [SerializeField]
-    GameObject [] players;
+    GameObject[] players;
 
     [SerializeField]
     GameObject CardPrefab;
@@ -21,22 +21,31 @@ public class EventManagerScript : MonoBehaviour
     [SerializeField]
     GameObject mainCamera;
 
+
+    string[][] effects;
+
     void Start()
     {
         this.InitializeStarterDeck();
         this.InitializePlayers();
         this.InitializeCamera();
+        this.InitializeEffects();
     }
 
     void InitializeCamera()
     {
-        this.camera = GameObject.FindGameObjectsWithTag("MainCamera");
+        this.mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+    }
+
+    void InitializeEffects()
+    {
+        
     }
     void InitializePlayers()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
-        this.assignFirstPlayer();
-        for(int j = 0; j<1; j++)
+        this.AsignFirstPlayer();
+        for (int j = 0; j < 1; j++)
         {
             for (int i = 0; i < initialHandCardNumber; i++)
             {
@@ -50,7 +59,8 @@ public class EventManagerScript : MonoBehaviour
         currentPlayerId = (currentPlayerId++) % players.Length;
     }
 
-    int AsignFirstPlayer() {
+    int AsignFirstPlayer()
+    {
         currentPlayerId = (new System.Random()).Next(0, players.Length);
         return currentPlayerId;
     }
@@ -67,7 +77,8 @@ public class EventManagerScript : MonoBehaviour
     }
     void ChangeTurn()
     {
-        this.incrementPlayerId();
+        this.IncrementPlayerId();
+        this.mainCamera.transform.Rotate(0, 0, 360 / this.players.Length);
         //players[currentPlayerId].takeTurn();
     }
 
@@ -76,9 +87,14 @@ public class EventManagerScript : MonoBehaviour
         GameObject newCard = Instantiate(CardPrefab);
         newCard.GetComponent<CardScript>().color = deckScript.GiveCard();
         foreach (Transform child in players[currentPlayerId].transform)
-          {
+        {
             if (child.tag == "Hand")
                 newCard.transform.parent = child;
-          }
+        }
+    }
+
+    void CastSpell()
+    {
+        
     }
 }

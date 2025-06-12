@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 36679351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
+  m_LocalPosition: {x: 0, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -305,7 +305,7 @@ Transform:
   m_GameObject: {fileID: 124462282}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.7, y: 1.39, z: 0}
+  m_LocalPosition: {x: 10.5, y: 0, z: 0}
   m_LocalScale: {x: 0.2619131, y: 0.2619131, z: 0.2619131}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -431,7 +431,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -624,6 +624,9 @@ MonoBehaviour:
   starterDeck: {fileID: 11400000, guid: b08af87207f24db80b9f4a397662b8be, type: 2}
   players: []
   CardPrefab: {fileID: 6002288527203318159, guid: 1f166fccb97e6b3a1b142f60fa860bf2, type: 3}
+  currentPlayerId: 0
+  initialHandCardNumber: 8
+  mainCamera: {fileID: 0}
 --- !u!1 &1120879053
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,8 +739,8 @@ Transform:
   m_GameObject: {fileID: 1504478357}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.009, y: -0.0044, z: 0}
-  m_LocalScale: {x: 0.9290499, y: 0.9385194, z: 0.9230404}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
