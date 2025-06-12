@@ -7,13 +7,15 @@ public class DeckScript : MonoBehaviour
 {
 
     // red, yellow, blue
-
+    [SerializeField]
     int[] CurrentNumberOfCards;
 
-    public StarterDeck starterDeck;
+    [SerializeField]
+    StarterDeck starterDeck;
 
-    public void InitializeDeck()
+    public void InitializeDeck(StarterDeck starterDeck)
     {
+        this.starterDeck = starterDeck;
         this.Reshuffle();
     }
 

@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 36679355}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 124462285}
   m_Layer: 0
   m_Name: Deck
-  m_TagString: Untagged
+  m_TagString: Deck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669f9e146582eb9489e436b20e9eee27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentNumberOfCards: 
   starterDeck: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
@@ -677,6 +678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d1666a3e40ef774cb03a086ae4c8f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starterDeck: {fileID: 11400000, guid: b08af87207f24db80b9f4a397662b8be, type: 2}
+  players: []
 --- !u!1 &1120879053
 GameObject:
   m_ObjectHideFlags: 0

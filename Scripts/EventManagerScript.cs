@@ -2,15 +2,34 @@ using UnityEngine;
 
 public class EventManagerScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    DeckScript deckScript;
+    public StarterDeck starterDeck;
+
+    [SerializeField]
+    GameObject [] players;
+
     void Start()
+    {
+        this.InitializeStarterDeck();
+        deckScript.InitializeDeck(starterDeck);
+        this.InitializePlayers();
+    }
+
+    void InitializePlayers() {
+        players = GameObject.FindGameObjectsWithTag("Player");
+    }
+
+    void InitializeStarterDeck() {
+        deckScript = GameObject.FindWithTag("Deck").GetComponent<DeckScript>();
+    }
+
+    void giveTurn()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void GiveCard()
     {
-        
+        deckScript.GiveCard();
     }
 }
