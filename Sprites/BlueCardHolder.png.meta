@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 694bc0b6675fd144795cd4612ea59397
+guid: b078997a9306f9ceb8b9ef48b8c99a16
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9209175356572727509
-    second: Fire_card___v1.0.1_0
-  - first:
-      213: -5535809990260615378
-    second: Fire_card___v1.0.1_1
+      213: 2277588521909004404
+    second: BlueCardHolder_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,29 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fire_card___v1.0.1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1200
-        height: 1500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 1}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5d87ccac1309dcf70800000000000000
-      internalID: 9209175356572727509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fire_card___v1.0.1_1
+      name: BlueCardHolder_0
       rect:
         serializedVersion: 2
         x: 0
@@ -166,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e271572d42adc23b0800000000000000
-      internalID: -5535809990260615378
+      spriteID: 478a4e881be9b9f10800000000000000
+      internalID: 2277588521909004404
       vertices: []
       indices: 
       edges: []
@@ -176,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e4edbc987dcdc884bb091f0a7f2430e7
+    spriteID: 65b37f4620eb806e0b8a326bf4a3d1b1
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fire_card___v1.0.1_0: 9209175356572727509
-      Fire_card___v1.0.1_1: -5535809990260615378
+      BlueCardHolder_0: 2277588521909004404
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

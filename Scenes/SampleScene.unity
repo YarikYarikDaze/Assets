@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c835a418193b6f70b66e7b595d605ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {fileID: 11400000, guid: 87b31a3f7a9bcd4fcb1d8733cd9e4e2c, type: 2}
+  color: {fileID: 11400000, guid: 5e97e7a7f359f5337b7777086dca1956, type: 2}
 --- !u!212 &89140099
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -420,6 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669f9e146582eb9489e436b20e9eee27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starterDeck: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
