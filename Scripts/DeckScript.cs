@@ -33,6 +33,7 @@ public class DeckScript : MonoBehaviour
             randomValue -= CurrentNumberOfCards[i];
             if (randomValue < 0)
             {
+                CurrentNumberOfCards[i]--;
                 return starterDeck.colorScript[i];
             }
         }

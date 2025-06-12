@@ -8,11 +8,17 @@ public class EventManagerScript : MonoBehaviour
     [SerializeField]
     GameObject [] players;
 
+    [SerializeField]
+    GameObject CardPrefab;
+
+    int currentPlayerId;
+
     void Start()
     {
         this.InitializeStarterDeck();
         deckScript.InitializeDeck(starterDeck);
         this.InitializePlayers();
+        this.GiveCard();
     }
 
     void InitializePlayers() {
@@ -30,6 +36,12 @@ public class EventManagerScript : MonoBehaviour
 
     void GiveCard()
     {
-        deckScript.GiveCard();
+        GameObject newCard = Instantiate(CardPrefab);
+        newCard.GetComponent<CardScript>().color = deckScript.GiveCard();
+        foreach (Transform child in players[currentPlayerId].transform)
+          {
+            if (child.tag == "Hand")
+                newCard.transform.parent = child;
+          }
     }
 }
