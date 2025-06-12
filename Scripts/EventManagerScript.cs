@@ -21,8 +21,11 @@ public class EventManagerScript : MonoBehaviour
     [SerializeField]
     GameObject mainCamera;
 
-
+    [SerializeField]
     string[][] effects;
+
+    [SerializeField]
+    GameObject canvas;
 
     void Start()
     {
@@ -39,7 +42,12 @@ public class EventManagerScript : MonoBehaviour
 
     void InitializeEffects()
     {
-        
+        Array.Resize(ref effects, starterDeck.maxCards.Length);
+        for (int i = 0; i < starterDeck.maxCards.Length; i++)
+        {
+            Array.Resize(ref effects[i], starterDeck.maxCards.Length);
+        }
+        effects[0][0] = "You casted fire+fire spell";
     }
     void InitializePlayers()
     {
