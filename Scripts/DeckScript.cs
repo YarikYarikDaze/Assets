@@ -2,15 +2,28 @@ using UnityEngine;
 
 public class DeckScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    int InitialNumebrOfBlueCards, InitialNumebrOfRedCards, InitialNumebrOfYellowCards, InitialNumberOfCards;
+
+    int CurrentNumebrOfBlueCards, CurrentNumebrOfRedCards, CurrentNumebrOfYellowCards, CurrentNumebrOfCards;
     void Start()
     {
-        // YOUR TAKING TOO LONG
+        // Pull Number of Cards from External File
+        this.Reshuffle();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Reshuffle()
     {
-        
+        // Set Current Number to Initial
+        this.CurrentNumebrOfBlueCards = this.InitialNumberOfCards;
+        this.CurrentNumebrOfRedCards = this.InitialNumebrOfRedCards;
+        this.CurrentNumebrOfYellowCards = this.InitialNumebrOfYellowCards;
+        this.CurrentNumebrOfCards = this.InitialNumberOfCards;
+    }
+
+    public void GiveCard()
+    {
+        // Create New Instancce Of A Card
+        // Assign Collor
+        // Give It To The Event Manager
     }
 }
