@@ -178,8 +178,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1649587
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: -3741690087743694363, guid: 2fa90216a1127c0458f89a437ac4fc63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -282,8 +282,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1348432615
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 2416395195971087409, guid: c39220c0d7af7da489725bbeca795d3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000007fb8cb9d4dd4e6ff198da0afe5d19e2f5bb17208
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -597,6 +597,14 @@ PrefabInstance:
     - target: {fileID: 6032181429470304549, guid: 1f166fccb97e6b3a1b142f60fa860bf2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852452219828328673, guid: 1f166fccb97e6b3a1b142f60fa860bf2, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852452219828328673, guid: 1f166fccb97e6b3a1b142f60fa860bf2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1348432615
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -770,8 +778,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1647593345
+  m_SortingLayer: -3
   m_SortingOrder: -1
   m_Sprite: {fileID: -789656713670852043, guid: 08ca0fbc968a91c409716af9ef0dbcb9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
