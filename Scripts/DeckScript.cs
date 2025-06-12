@@ -22,7 +22,8 @@ public class DeckScript : MonoBehaviour
     public void Reshuffle()
     {
         // Set Current Number to Initial
-        this.CurrentNumberOfCards = this.starterDeck.maxCards;
+        Array.Resize(ref this.CurrentNumberOfCards, starterDeck.maxCards.Length);
+        Array.Copy(starterDeck.maxCards, this.CurrentNumberOfCards, starterDeck.maxCards.Length);
     }
 
     public ColorScript GiveCard()

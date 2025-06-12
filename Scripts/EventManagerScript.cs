@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class EventManagerScript : MonoBehaviour
 {
@@ -11,27 +12,63 @@ public class EventManagerScript : MonoBehaviour
     [SerializeField]
     GameObject CardPrefab;
 
+    [SerializeField]
     int currentPlayerId;
+
+    [SerializeField]
+    int initialHandCardNumber = 8;
+
+    [SerializeField]
+    GameObject mainCamera;
 
     void Start()
     {
         this.InitializeStarterDeck();
-        deckScript.InitializeDeck(starterDeck);
         this.InitializePlayers();
-        this.GiveCard();
+        this.InitializeCamera();
     }
 
-    void InitializePlayers() {
-        players = GameObject.FindGameObjectsWithTag("Player");
-    }
-
-    void InitializeStarterDeck() {
-        deckScript = GameObject.FindWithTag("Deck").GetComponent<DeckScript>();
-    }
-
-    void giveTurn()
+    void InitializeCamera()
     {
-        
+        this.camera = GameObject.FindGameObjectsWithTag("MainCamera");
+    }
+    void InitializePlayers()
+    {
+        players = GameObject.FindGameObjectsWithTag("Player");
+        this.assignFirstPlayer();
+        for(int j = 0; j<1; j++)
+        {
+            for (int i = 0; i < initialHandCardNumber; i++)
+            {
+                this.GiveCard();
+            }
+        }
+    }
+
+    void IncrementPlayerId()
+    {
+        currentPlayerId = (currentPlayerId++) % players.Length;
+    }
+
+    int AsignFirstPlayer() {
+        currentPlayerId = (new System.Random()).Next(0, players.Length);
+        return currentPlayerId;
+    }
+
+    void InitializeStarterDeck()
+    {
+        deckScript = GameObject.FindWithTag("Deck").GetComponent<DeckScript>();
+        deckScript.InitializeDeck(starterDeck);
+    }
+
+    public void TurnEnded()
+    {
+        this.ChangeTurn();
+    }
+    void ChangeTurn()
+    {
+        this.incrementPlayerId();
+        //players[currentPlayerId].takeTurn();
     }
 
     void GiveCard()
