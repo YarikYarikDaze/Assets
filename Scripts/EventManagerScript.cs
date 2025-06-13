@@ -1,5 +1,7 @@
-using UnityEngine;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class EventManagerScript : MonoBehaviour
 {
@@ -22,7 +24,8 @@ public class EventManagerScript : MonoBehaviour
     GameObject mainCamera;
 
 
-    string[][] effects;
+
+    string[,] pairEffects;
 
     void Start()
     {
@@ -35,11 +38,28 @@ public class EventManagerScript : MonoBehaviour
     void InitializeCamera()
     {
         this.mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        this.mainCamera.transform.rotation = Quaternion.Euler(mainCamera.transform.rotation.x, mainCamera.transform.rotation.y, 360/players.Length*(currentPlayerId+1));
     }
 
     void InitializeEffects()
     {
-        
+        pairEffects = new string[3, 3] {
+            {
+                "TAKE A CARD!",
+                "DOUBLE TAKE!",
+                "EXTRA TAKE!"
+            },
+            {
+                "DISPELL!",
+                "STUN!",
+                "STEAL!"
+            },
+            {
+                "REACTION TAKE",
+                "REACTION STUN?!",
+                "SHIELD"
+            }
+        };
     }
     void InitializePlayers()
     {
@@ -47,16 +67,15 @@ public class EventManagerScript : MonoBehaviour
         this.AsignFirstPlayer();
         for (int j = 0; j < 1; j++)
         {
-            for (int i = 0; i < initialHandCardNumber; i++)
-            {
-                this.GiveCard();
-            }
+            players[j].GetComponent<PlayerScript>().manager = gameObject.GetComponent<EventManagerScript>();
+            this.GiveAll();
         }
+        players[currentPlayerId].GetComponent<PlayerScript>().turn = true;
     }
 
     void IncrementPlayerId()
     {
-        currentPlayerId = (currentPlayerId++) % players.Length;
+        currentPlayerId = (currentPlayerId+1) % players.Length;
     }
 
     int AsignFirstPlayer()
@@ -73,28 +92,44 @@ public class EventManagerScript : MonoBehaviour
 
     public void TurnEnded()
     {
+        Debug.Log(currentPlayerId);
         this.ChangeTurn();
     }
     void ChangeTurn()
     {
+        players[currentPlayerId].GetComponent<PlayerScript>().turn = false;
         this.IncrementPlayerId();
-        this.mainCamera.transform.Rotate(0, 0, 360 / this.players.Length);
-        //players[currentPlayerId].takeTurn();
+        this.mainCamera.transform.rotation = Quaternion.Euler(mainCamera.transform.rotation.x, mainCamera.transform.rotation.y, 360/players.Length*(currentPlayerId+1));
+        players[currentPlayerId].GetComponent<PlayerScript>().turn = true;
     }
 
-    void GiveCard()
+    void GiveAll()
     {
-        GameObject newCard = Instantiate(CardPrefab);
-        newCard.GetComponent<CardScript>().color = deckScript.GiveCard();
-        foreach (Transform child in players[currentPlayerId].transform)
-        {
-            if (child.tag == "Hand")
-                newCard.transform.parent = child;
+        foreach(GameObject player in players){
+            foreach (Transform child in player.transform)
+            {
+                if (child.tag == "Hand")
+                {
+                    for (int i = 0; i < initialHandCardNumber; i++)
+                    {
+                        GameObject newCard = Instantiate(CardPrefab);
+                        newCard.GetComponent<CardScript>().color = deckScript.GiveCard();
+                        newCard.transform.parent = child;
+                    }
+                    break;
+                }
+            }
         }
     }
 
-    void CastSpell()
+    public void CastSpell(int[] cardTypes)
     {
-        
+        //text = pairEffects[cardTypes[0], cardTypes[1]]
+        StartCoroutine(Wait());
+        //text = "";
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2f);
     }
 }
